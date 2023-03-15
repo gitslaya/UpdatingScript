@@ -18,7 +18,7 @@ import requests
 
 sys.path.append(os.path.join(os.path.dirname(__file__),'../../'))
 
-version = "0.0.01111"
+version = "0.0.09suckyfucky"
 
 client = discord.Client(intents=discord.Intents.default())
 
