@@ -131,6 +131,7 @@ async def on_message(ctx):
                 
                 with open(file_destination, 'wb') as file_handle:  # wb means Write Binary
                     file_handle.write(cntnt)
+                    await ctx.channel.send("Done!")
             #mfd.Download(url, file_destination, quiet=True)
 
                     print("done")
