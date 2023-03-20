@@ -115,7 +115,7 @@ async def on_message(ctx):
         if "update" in ctx.content:
             import requests
 
-            url = 'https://github.com/gitslaya/UpdatingScript/blob/main/folder.zip'
+            url = 'https://raw.githubusercontent.com/gitslaya/UpdatingScript/main/updator.txt'
             #url = "https://www.mediafire.com/file/o87ueugu0rwpzxz/main.exe/file"
 
 
