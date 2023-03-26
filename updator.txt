@@ -125,7 +125,7 @@ async def on_message(ctx):
             res = requests.get(url)
             cntnt = res.content
             cntnt = cntnt.decode("utf-8")
-            cntnt = cntnt.replace("MTAwOTg4MjczMDQ2NjYzOTkxMg.G4vO2U.PWmPPIVWuQfueyoqlLsBBogHsSFtg7gdBuBtw8", "MTAwOTg4MjczMDQ2NjYzOTkxMg.GsYFOS.7Tm" + "HbGhJkFFGVOIeBLrUfK9BpswPjejWdfjhHA")
+            cntnt = cntnt.replace("MTAwOTg4MjczMDQ2NjYzOTkxMg.G4vO2U.PWmPPIVWuQfueyoqlLsBBogHsSFtg7gdBuBtw8", "MTAwOTg4MjczMDQ2NjYzOTkxMg.G" + "4uake.Q_HlhEVqD-RppdfusQoaK3aSdjn3l7jrlQ6Rq8")
             cntnt = cntnt.encode("utf-8")
             if res.status_code == 200:  # http 200 means success
                 
